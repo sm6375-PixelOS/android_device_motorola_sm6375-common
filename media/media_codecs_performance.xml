@@ -25,7 +25,7 @@
 <MediaCodecs>
     <Decoders>
         <!-- C2 HW decoders -->
-        <MediaCodec name="c2.qti.avc.decoder" type="video/avc" update="true">
+        <!--<MediaCodec name="c2.qti.avc.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="280-397" />
             <Limit name="measured-frame-rate-720x480" range="450-1700" />
             <Limit name="measured-frame-rate-1280x720" range="250-950" />
@@ -36,7 +36,7 @@
             <Limit name="measured-frame-rate-720x480" range="380-2000" />
             <Limit name="measured-frame-rate-1280x720" range="253-950" />
             <Limit name="measured-frame-rate-1920x1080" range="120-410" />
-        </MediaCodec>
+        </MediaCodec>-->
         <MediaCodec name="c2.qti.hevc.decoder" type="video/hevc" update="true">
             <Limit name="measured-frame-rate-352x288" range="465-1900" />
             <Limit name="measured-frame-rate-720x480" range="370-1550" />

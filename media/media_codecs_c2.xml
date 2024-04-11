@@ -110,11 +110,107 @@
         </MediaCodec>
     </Encoders>
     <Decoders>
-        <MediaCodec name="c2.android.gsm.decoder" type="audio/gsm" update="true" enabled="true">
-            <Alias name="OMX.google.gsm.decoder" />
-            <Limit name="channel-count" max="1" />
-            <Limit name="sample-rate" ranges="8000" />
-            <Limit name="bitrate" range="13000" />
+        <!-- C2 decoders -->
+        <!--<MediaCodec name="c2.qti.avc.decoder" type="video/avc">
+            <Alias name="OMX.qcom.video.decoder.avc"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" range="36-489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="frame-rate" range="1-120" />
+            <Limit name="concurrent-instances" max="16" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="concurrent-instances" max="16" />
+            <Limit name="performance-point-1920x1080" value="60" />
+            <Limit name="performance-point-1280x720" value="120" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.avc.decoder.low_latency" type="video/avc">
+            <Alias name="OMX.qcom.video.decoder.avc.low_latency"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" range="36-489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="frame-rate" range="1-120" />
+            <Limit name="concurrent-instances" max="16" />
+            <Feature name="adaptive-playback" />
+            <Feature name="low-latency" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="concurrent-instances" max="16" />
+            <Limit name="performance-point-1920x1080" value="60" />
+            <Limit name="performance-point-1280x720" value="120" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.avc.decoder.secure" type="video/avc" >
+            <Alias name="OMX.qcom.video.decoder.avc.secure"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="36" max="489600" />
+            <Limit name="bitrate" range="1-35000000" />
+            <Limit name="frame-rate" range="1-60" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Feature name="secure-playback" required="true" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="performance-point-1920x1080" value="30" />
+        </MediaCodec>-->
+        <MediaCodec name="c2.qti.hevc.decoder" type="video/hevc" >
+            <Alias name="OMX.qcom.video.decoder.hevc"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="36" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="frame-rate" range="1-120" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="concurrent-instances" max="16" />
+            <Limit name="performance-point-1920x1080" value="60" />
+            <Limit name="performance-point-1280x720" value="120" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.hevc.decoder.secure" type="video/hevc" >
+            <Alias name="OMX.qcom.video.decoder.hevc.secure"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="36" max="489600" />
+            <Limit name="bitrate" range="1-35000000" />
+            <Limit name="frame-rate" range="1-60" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Feature name="secure-playback" required="true" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="performance-point-1920x1080" value="30" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.vp9.decoder" type="video/x-vnd.on2.vp9" >
+            <Alias name="OMX.qcom.video.decoder.vp9"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="36" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="frame-rate" range="1-60" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="performance-point-1920x1080" value="60" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
+            <Alias name="OMX.qcom.video.decoder.vp9.secure"/>
+            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="36" max="489600" />
+            <Limit name="bitrate" range="1-35000000" />
+            <Limit name="frame-rate" range="1-60" />
+            <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Feature name="secure-playback" required="true" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
         <MediaCodec name="c2.android.av1.decoder" type="video/av01" update="true" variant="slow-cpu">
             <Limit name="size" min="96x96" max="1920x1080" />
