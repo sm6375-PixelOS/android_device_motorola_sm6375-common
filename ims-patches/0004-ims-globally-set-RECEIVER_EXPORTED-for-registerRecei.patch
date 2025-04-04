@@ -9,7 +9,6 @@ E AndroidRuntime: java.lang.RuntimeException: Unable to create service org.codea
 ---
  smali/com/qualcomm/ims/vt/LowBatteryHandler.smali  | 4 +++-
  smali/org/codeaurora/ims/ImsCallModification.smali | 4 +++-
- smali/org/codeaurora/ims/ImsConfigImpl.smali       | 4 +++-
  smali/org/codeaurora/ims/ImsServiceSub.smali       | 4 +++-
  smali/org/codeaurora/ims/ImsSubController.smali    | 8 ++++++--
  5 files changed, 18 insertions(+), 6 deletions(-)
@@ -20,9 +19,9 @@ index d69a656..deff6db 100644
 +++ b/smali/com/qualcomm/ims/vt/LowBatteryHandler.smali
 @@ -150,7 +150,9 @@
  
-     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+     invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
  
--    invoke-virtual {p2, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 +    const/4 v2, 0x2
 +
 +    invoke-virtual {p2, v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
@@ -34,31 +33,17 @@ index 3c209df..a18213b 100644
 --- a/smali/org/codeaurora/ims/ImsCallModification.smali
 +++ b/smali/org/codeaurora/ims/ImsCallModification.smali
 @@ -300,7 +300,9 @@
-     .line 140
-     iget-object v2, p0, Lorg/codeaurora/ims/ImsCallModification;->mContext:Landroid/content/Context;
- 
--    invoke-virtual {v2, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-+    const/4 v3, 0x2
-+
-+    invoke-virtual {v2, v0, v1, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     .line 141
-     const-string v0, "Registering car mode receiver"
-diff --git a/smali/org/codeaurora/ims/ImsConfigImpl.smali b/smali/org/codeaurora/ims/ImsConfigImpl.smali
-index c38fe20..4daeb74 100644
---- a/smali/org/codeaurora/ims/ImsConfigImpl.smali
-+++ b/smali/org/codeaurora/ims/ImsConfigImpl.smali
-@@ -668,7 +668,9 @@
- 
-     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+     iget-object v1, p0, Lorg/codeaurora/ims/ImsCallModification;->mContext:Landroid/content/Context;
+
+     iget-object v2, p0, Lorg/codeaurora/ims/ImsCallModification;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
  
 -    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 +    const/4 v3, 0x2
 +
 +    invoke-virtual {v1, v2, v0, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
  
-     .line 257
-     new-instance v1, Landroid/os/HandlerThread;
+     .line 141
+     const-string v0, "Registering car mode receiver"
 diff --git a/smali/org/codeaurora/ims/ImsServiceSub.smali b/smali/org/codeaurora/ims/ImsServiceSub.smali
 index 4a4a489..579abd8 100644
 --- a/smali/org/codeaurora/ims/ImsServiceSub.smali
@@ -80,14 +65,14 @@ index 3f21add..e0f6feb 100644
 +++ b/smali/org/codeaurora/ims/ImsSubController.smali
 @@ -416,7 +416,9 @@
  
-     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+     invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
  
--    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 +    const/4 v2, 0x2
 +
 +    invoke-virtual {p1, v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
  
-     .line 217
+     .line 215
      iput-object p2, p0, Lorg/codeaurora/ims/ImsSubController;->mSenderRxrs:Ljava/util/List;
 @@ -1267,7 +1269,9 @@
  
@@ -98,7 +83,7 @@ index 3f21add..e0f6feb 100644
 +
 +    invoke-virtual {v2, v4, v5, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
  
-     .line 752
+     .line 746
      iput-boolean v3, p0, Lorg/codeaurora/ims/ImsSubController;->mIsReceiverRegistered:Z
 -- 
 2.43.0

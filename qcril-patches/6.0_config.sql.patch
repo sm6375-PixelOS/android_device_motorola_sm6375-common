@@ -7,9 +7,8 @@ Subject: [PATCH] sm6375-common: Fix persist.vendor.radio.poweron_opt to 0
 
 Change-Id: I6f045b67c4a84b246471fa9249fa883fc78c1ee1
 ---
- .../vendor/etc/qcril_database/qcrilNr.db      | Bin 106496 -> 106496 bytes
  .../upgrade/config/6.0_config.sql             |   2 +-
- 2 files changed, 1 insertion(+), 1 deletion(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/6.0_config.sql b/6.0_config.sql
 index d178cf1..3a4c811 100644
