@@ -14,7 +14,7 @@ index 644a553..c921038 100644
 @@ -1471,22 +1471,9 @@
      .param p1, "subid"    # I
  
-     .line 849
+     .line 852
 -    const-string v0, "wfc_ims_mdn"
 -
 -    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl;->mContext:Landroid/content/Context;
@@ -23,13 +23,13 @@ index 644a553..c921038 100644
 -
 -    move-result-object v0
 -
--    .line 851
+-    .line 854
 -    .local v0, "mdn":Ljava/lang/String;
 -    if-nez v0, :cond_0
  
      const-string v0, "0"
  
--    .line 852
+-    .line 855
 -    :cond_0
      return-object v0
  .end method
