@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libspkrprot \
     libtinycompress \
+    MotoDolby \
     libvisualizer \
     libvolumelistener \
     sound_trigger.primary.holi
