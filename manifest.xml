@@ -1,4 +1,4 @@
-<manifest version="2.0" type="device" target-level="5">
+<manifest version="2.0" type="device" target-level="6">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -99,7 +99,7 @@
     <hal format="hidl">
         <name>android.hardware.tetheroffload.control</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IOffloadControl</name>
             <instance>default</instance>
@@ -557,5 +557,4 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
-    <kernel target-level="5"/>
 </manifest>
